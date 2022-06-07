@@ -1,11 +1,19 @@
+html{
+  background-color: rgb(231, 252, 250);
+}
+
 body {
     font-family: "Brush Script MT", cursive;
-    margin: 100px;
-    padding-left: 100px;
+    margin: 20px;
   }
   
   ol, ul {
-    padding-left: 40px;
+    padding: 0px;
+    margin: 5px;
+  } 
+
+  li{
+    list-style: none;
   }
   
   .board-row:after {
@@ -16,36 +24,31 @@ body {
   
   .status {
     margin-bottom: 20px;
-    text-align: center;
-    font-style: italic;
+    
   }
   
   .square {
     background: rgb(255, 255, 255);
-    border: 2px solid #041a63;
+    border: 1px solid #041a63;
     border-radius: 8px;   
     box-shadow: 2px 5px 5px #78afcf;
     float: left;
-    font-size: 30px;
-    font-weight: bold;
     line-height: 40px;
-    height: 70px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 70px;
-    color: rgb(8, 8, 8);
-    
+    height: 100px;
+    width: 100px;
+    padding: 0px;
+    margin: -1px;
+    text-align: center;    
   }
   
   .highlight{
-   background-color: #faeece !important;
-   box-shadow: 1px 1px 3px #4e4a3f !important;
+   background-color: #0c1047 !important;
+   box-shadow: 1px 1px 3px #5b5c5c !important;
+   color: white;
   }
   
   .winning-square{
-    background-color: rgb(12, 16, 71);
+    background-color: #0c1047;
   }
 
   .square:focus {
@@ -64,19 +67,21 @@ body {
   .game-info {
     margin-left: 30px;
     text-align: center;
-    font-style: italic;
-    font: 15px "Brush Script MT", cursive;
-    margin: 15px;
+    font: 15px 'Arial', serif;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #020527;
+    text-align: center;
   }
   
   button.square[data-pro="X"] {
     color: rgba(189, 7, 98, 0.986);
-    font: 35px "Brush Script MT", cursive;
+    font: 40px "Brush Script MT", cursive;
     }
     
     button.square[data-pro="O"] {
       color: rgb(120, 163, 21);
-      font: 35px "Brush Script MT", cursive;
+      font: 40px "Brush Script MT", cursive;
     }
 
     .link{
@@ -85,7 +90,7 @@ body {
     }
 
     .reset{
-      font: 15px 'Brush Script MT', cursive;
+      font: 15px 'Arial', serif;
       border-radius: 8px;
       margin: 20px;
       margin-left: 80px;
@@ -95,4 +100,15 @@ body {
       border-color: #031349
     }
 
-    
+    .box{
+      background-color: #b5d9ee9c;
+      border-radius: 30px;
+      box-shadow: 3px 3px 3px #78afcf;
+      width: 700px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      display: flex;
+      justify-content: space-around;      
+    }
+

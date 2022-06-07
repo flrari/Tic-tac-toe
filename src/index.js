@@ -15,7 +15,8 @@ function Square(props) {
   }
    
   class Board extends React.Component {
-    renderSquare(i) {
+    
+    renderSquare(i) {      
       return (
         <Square
           value={this.props.squares[i]}
@@ -105,18 +106,20 @@ function Square(props) {
 
       const moves = history.map((step, move) => {
 
+        let rigaColonna = calculateLocation(step.location);
+
         const desc = move ?
-          'Mossa #' + move + ' ' + calculateLocation(step.location) :
-          "Torna all'inizio";
+          `Mossa # ${move} - ${rigaColonna}` : 
+          "Nuovo gioco";
 
         return (
-          <li key={move}>
-            <button className = { move === this.state.stepNumber ? "highlight" : ""}
-            style = {{ textColor : "#031349", font: "15px 'Brush Script MT', cursive", borderRadius: "8px", margin: "5px", padding: "4px", backgroundColor: "#CEEAFA", borderColor: "#031349", boxShadow: "1px 1px 3px #78afcf"}} 
-            onClick = {() => this.jumpTo(move)}>{desc}
-            </button>
-          </li>
-        );
+            <li key={move}>
+              <button className = { move === this.state.stepNumber ? "highlight" : ""}
+              style = {{ textColor : "#031349", font: "15px 'Brush Script MT', cursive", borderRadius: "8px", margin: "5px", padding: "4px", backgroundColor: "#CEEAFA", border: "1px solid #031349", boxShadow: "1px 1px 3px #5b5c5c"}} 
+              onClick = {() => this.jumpTo(move)}>{desc}
+              </button>
+            </li>
+          );
       });
   
       let status;
